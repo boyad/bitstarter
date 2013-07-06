@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
   response.send('Hello World 2!');
   */
   mybuf = new Buffer(256);
-  len = mybuf.write(fs("./index.html"))
+  len = mybuf.write(fs.readFileSync("index.html"))
   response.send(mybuf.toString('utf8',0,len));
 });
 
